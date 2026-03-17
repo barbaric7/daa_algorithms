@@ -1,0 +1,1 @@
+Write a program that takes a string of unique charaters as input and generate all possible combinations of them and print. Using swapping.

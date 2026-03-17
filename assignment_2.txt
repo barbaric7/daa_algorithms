@@ -1,0 +1,8 @@
+
+Create a array of size 1000000;
+
+Fill the array using random numbers using for loop with help of rand( ) function;
+
+Take input from user to search for single or multiple occurences.
+
+Implement Linear search on the array and find the target element.

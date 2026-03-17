@@ -1,0 +1,5 @@
+Create a array of size 1000000;
+
+Fill the array using random numbers using for loop with help of rand( ) function;
+
+With help of linear serach find the min and max element in the array.

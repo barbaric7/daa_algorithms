@@ -1,0 +1,5 @@
+Create a unsorted array of 10 lakh elements of random strings.
+
+Sort the array with merge sort using multithreading.
+
+Implement binary search on the array & find out the target string.
