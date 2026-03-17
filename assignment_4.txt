@@ -1,1 +1,6 @@
-Write a program that takes a string of unique charaters as input and generate all possible combinations of them and print. Using swapping.
+Create a unsorted array of 10 lakh elements of random strings.
+
+Sort the array with quick sort using multithreading.
+
+Implement binary search on the array & find out the target string.
+

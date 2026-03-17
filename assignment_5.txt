@@ -1,0 +1,3 @@
+Take string input from user.
+
+Print all possible unique permutations of that string.

@@ -1,0 +1,5 @@
+Implement Djikstra's Algorithm.
+
+Take no. of nodes,distance between them,source node & target node as input.
+
+print the shortest path taken & cost of that path.

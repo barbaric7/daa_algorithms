@@ -1,0 +1,5 @@
+Take the chess board size n as input from user.
+
+Write program to place n queens on N x N board such that no Queen threatens each other.
+
+Print all permutations in which n Queens can be placed on the board.
