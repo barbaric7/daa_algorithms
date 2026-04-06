@@ -1,0 +1,5 @@
+Write a program to assign colours to nodes in graph such that no neighbouring nodes have same colour.
+
+Take no. of nodes, their edges & no. of colours as input from user.
+
+If colouring possible with given no. of colours, print the possible solution else print colouring not possible.

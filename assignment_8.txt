@@ -1,0 +1,5 @@
+Implement 0/1 knapsack Algorithm.
+
+Take sack capacity, profit & weight per item for n items from user.
+
+Print the possible combination of items possible to gain max profit.
