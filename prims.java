@@ -1,18 +1,16 @@
 import java.util.Scanner;
 
-public class dijkstra {
+public class prims {
 
     static final int MAX = 9999;
 
-    // checks array and returns the smallest unvisited node
-
-    static int minDistance(int dist[], boolean visited[], int n) {
+    static int minKey(int key[], boolean visited[], int n) {
 
         int min = MAX, index = -1;
 
         for (int i = 0; i < n; i++) {
-            if (!visited[i] && dist[i] < min) {
-                min = dist[i];
+            if (!visited[i] && key[i] < min) {
+                min = key[i];
                 index = i;
             }
         }
@@ -20,53 +18,47 @@ public class dijkstra {
         return index;
     }
 
-    static void printPath(int parent[], int j) {
+    static void primsAlgo(int graph[][], int n) {
 
-        if (parent[j] == -1) {
-            System.out.print((char)('a' + j));
-            return;
-        }
-
-        printPath(parent, parent[j]);
-        System.out.print("->" + (char)('a' + j));
-    }
-
-    static void dijkstraAlgo(int graph[][], int n, int src, int target) {
-
-        int dist[] = new int[n];
-        boolean visited[] = new boolean[n];
+        int key[] = new int[n];
         int parent[] = new int[n];
+        boolean visited[] = new boolean[n];
 
         for (int i = 0; i < n; i++) {
-            dist[i] = MAX;
+            key[i] = MAX;
             visited[i] = false;
             parent[i] = -1;
         }
 
-        dist[src] = 0;
+        key[0] = 0; // start from node 'a'
 
         for (int count = 0; count < n - 1; count++) {
 
-            int u = minDistance(dist, visited, n);
+            int u = minKey(key, visited, n);
             visited[u] = true;
-            
-            // updating neighbour distances
-            
+
             for (int v = 0; v < n; v++) {
 
                 if (!visited[v] && graph[u][v] != MAX &&
-                        dist[u] + graph[u][v] < dist[v]) {
+                        graph[u][v] < key[v]) {
 
-                    dist[v] = dist[u] + graph[u][v];
+                    key[v] = graph[u][v];
                     parent[v] = u;
                 }
             }
         }
 
-        System.out.print("\nShortest Path: ");
-        printPath(parent, target);
+        int cost = 0;
 
-        System.out.println("\nCost = " + dist[target]);
+        System.out.println("\nEdges in MST:");
+
+        for (int i = 1; i < n; i++) {
+            System.out.println((char)('a' + parent[i]) + " -> " + (char)('a' + i)
+                    + " = " + graph[i][parent[i]]);
+            cost += graph[i][parent[i]];
+        }
+
+        System.out.println("Total Cost = " + cost);
     }
 
     public static void main(String[] args) {
@@ -100,16 +92,7 @@ public class dijkstra {
             }
         }
 
-        System.out.print("\nEnter source node: ");
-        char s = sc.next().charAt(0);
-
-        System.out.print("Enter target node: ");
-        char t = sc.next().charAt(0);
-
-        int src = s - 'a';
-        int target = t - 'a';
-
-        dijkstraAlgo(graph, n, src, target);
+        primsAlgo(graph, n);
 
         sc.close();
     }
